@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { MODULES } from './app.imports';
+import { MODULES, COMPONENTS } from './app.imports';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    COMPONENTS
   ],
   imports: [
     MODULES
