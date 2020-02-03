@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
-import { MODULES } from './home.imports';
+import { MODULES, COMPONENTS } from './home.imports';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    COMPONENTS
+  ],
   imports: [
     MODULES
   ]
