@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+input {
+    outline: none!important;
+    border: none !important;
+    background: 0 0 !important;
+}
+[type=reset], [type=submit], button, html [type=input] {
+    -webkit-appearance: button !important;
+}
+input, select {
+    text-transform: none !important;
+}
+input {
+    overflow: visible !important;
+}
+input, optgroup, select, textarea {
+    margin: 0 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
+input{
+    outline:none!important;
+    border:none !important;
+    background:0 0 !important
+}
+input:hover{
+    cursor:pointer !important
+}
