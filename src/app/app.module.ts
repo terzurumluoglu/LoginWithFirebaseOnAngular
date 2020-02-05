@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { MODULES, COMPONENTS } from './app.imports';
-
+import { COMPONENTS, MODULES, PROVIDERS } from './app.imports';
+import * as firebase from 'firebase/app';
+import "firebase/auth";
+import { firebaseConfig } from './helpers/firebase.config';
+firebase.initializeApp(firebaseConfig);
 @NgModule({
   declarations: [
     AppComponent,
@@ -10,7 +13,9 @@ import { MODULES, COMPONENTS } from './app.imports';
   imports: [
     MODULES
   ],
-  providers: [],
+  providers: [
+    PROVIDERS
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

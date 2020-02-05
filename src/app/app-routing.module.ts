@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotfoundComponent } from './components/home/notfound/notfound.component';
 import { ManageComponent } from './components/manage/manage.component';
+import { AuthGuard } from './guards/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
   },
   {
     path : 'manage',
-    component : ManageComponent
+    component : ManageComponent,
+    canActivate : [AuthGuard]
   },
   {
     path : '**',

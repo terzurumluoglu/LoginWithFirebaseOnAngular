@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { PhoneComponent } from './phone/phone.component';
 
 const routes: Routes = [
   {
@@ -9,8 +11,21 @@ const routes: Routes = [
     component: HomeComponent,
     children : [
       {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+      },
+      {
         path : 'login',
         component : LoginComponent
+      },
+      {
+        path : 'phone',
+        component : PhoneComponent
+      },
+      {
+        path : 'register',
+        component : RegisterComponent
       }
     ]
   }

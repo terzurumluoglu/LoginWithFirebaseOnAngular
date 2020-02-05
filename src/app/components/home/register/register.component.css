@@ -1,0 +1,11 @@
+.pointer{
+    cursor: pointer;
+}
+input{
+    outline:none !important;
+    border:none !important;
+    background:0 0 !important;
+}
+input:hover{
+    cursor:pointer !important;
+}
