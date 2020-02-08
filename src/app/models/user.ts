@@ -10,22 +10,3 @@ export class User {
         this.phoneNumber = phoneNumber;
     }
 }
-
-export class UserList {
-    private _firebase: FirebaseService;
-    public getUser(email: string, password: string): Promise<User> {
-        return new Promise((res, rej) => {
-            this._firebase.signInWithEmailAndPassword(email, password).then(p => {
-                console.log(p);
-                if(p){
-                    let user : User = new User(p.user.uid,p.user.email,p.user.phoneNumber)
-                    res(user);
-                }else{
-                    rej({});
-                }
-            }).catch(err => {
-                rej(err);
-            })
-        });
-    }
-}

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { ErrorInterceptor } from 'src/app/helpers/error.interceptor';
+import { PasswordMatch } from 'src/app/helpers/password';
 
 @Component({
   selector: 'app-register',
@@ -14,9 +15,9 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  msgData = {cssClass : null,message : null};
+  msgData = { cssClass: null, message: null };
   loader: boolean = false;
-  alert : boolean = false;
+  alert: boolean = false;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -64,17 +65,10 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required]],
       passwordConfirm: ['', [Validators.required]]
     },
-    {
-       validator: this.passwordMatch // your validation method
-    })
+      {
+        validator: PasswordMatch('password', 'passwordConfirm') // your validation method
+      })
   }
 
-  passwordMatch(AC: AbstractControl) {
-    if (AC.get('password').value != AC.get('passwordConfirm').value) {
-       AC.get('passwordConfirm').setErrors({ MatchPassword: true });
-       return true;
-    } else {
-       return null;
-    }
- }
+  get f() { return this.registerForm.controls; }
 }

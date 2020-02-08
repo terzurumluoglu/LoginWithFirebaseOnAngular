@@ -62,9 +62,17 @@ body{
     background-position: right calc(.375em + .1875rem) center;
     background-size: calc(.75em + .375rem) calc(.75em + .375rem);
 }
-@media (min-width: 576px){
-  .jumbotron {
-    padding: 2rem 2rem !important;
-  }
+.area{
+  background-color: #e9ecef;
+  height: 100%;
+  margin: 50px 50px 50px 50px;
+  padding: 30px 20px 30px 20px;
+  border-radius: 2%;
+}
+.jumbotron{
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 /* Change Bootstrap */

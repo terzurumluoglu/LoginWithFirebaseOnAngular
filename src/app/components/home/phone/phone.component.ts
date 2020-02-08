@@ -23,6 +23,7 @@ export class PhoneComponent implements OnInit {
   alert : boolean = false;
   isPhone : boolean = true;
   isCode : boolean = false;
+  btnisActive : boolean = true;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -51,6 +52,7 @@ export class PhoneComponent implements OnInit {
   login(phoneForm: FormGroup) {
     this.loader = true;
     this.alert = false;
+    this.btnisActive = false;
     var appVerifier = this.windowRef.recaptchaVerifier;
     this._firebase.signInWithPhoneNumber(phoneForm.value.phone, appVerifier).then(res => {
       this.windowRef.confirmationResult = res;
@@ -63,6 +65,7 @@ export class PhoneComponent implements OnInit {
       this.loader = false;
       this.msgData = {cssClass : 'alert alert-danger',message : err.message};
       this.alert= true;
+      this.btnisActive = true;
       this._error.handleError(err);
     })
   }

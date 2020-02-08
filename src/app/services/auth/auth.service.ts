@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User, UserList } from 'src/app/models/user';
+import { User } from 'src/app/models/user';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { FirebaseService } from '../firebase/firebase.service';
 
@@ -10,7 +10,6 @@ import { FirebaseService } from '../firebase/firebase.service';
 export class AuthService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
-  uList: UserList = new UserList();
   constructor(
     private _firebase: FirebaseService) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
