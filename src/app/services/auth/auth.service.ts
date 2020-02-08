@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { User, UserList } from 'src/app/models/user';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { FirebaseService } from '../firebase/firebase.service';
-import { ErrorInterceptor } from 'src/app/helpers/error.interceptor';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,6 @@ export class AuthService {
   public currentUser: Observable<User>;
   uList: UserList = new UserList();
   constructor(
-    private _error: ErrorInterceptor,
     private _firebase: FirebaseService) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();

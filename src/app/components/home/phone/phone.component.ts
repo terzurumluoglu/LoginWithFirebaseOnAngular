@@ -21,6 +21,8 @@ export class PhoneComponent implements OnInit {
   msgData = {cssClass : null,message : null};
   loader: boolean = false;
   alert : boolean = false;
+  isPhone : boolean = true;
+  isCode : boolean = false;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -54,6 +56,8 @@ export class PhoneComponent implements OnInit {
       this.windowRef.confirmationResult = res;
       this.loader = false;
       this.alert = true;
+      this.isPhone = false;
+      this.isCode = true;
       this.msgData = {cssClass : 'alert alert-success',message : 'We have sent Verification Code'};
     }).catch(err => {
       this.loader = false;

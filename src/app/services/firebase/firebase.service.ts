@@ -30,10 +30,6 @@ export class FirebaseService {
     return this.fireAuth.signInWithPhoneNumber(phone, appVerifier);
   }
 
-  signInWithEmailLink(email: string) {
-    this.fireAuth.signInWithEmailLink(email)
-  }
-
   createUserWithEmailAndPassword(email : string,password : string){
     return this.fireAuth.createUserWithEmailAndPassword(email,password);
   }
