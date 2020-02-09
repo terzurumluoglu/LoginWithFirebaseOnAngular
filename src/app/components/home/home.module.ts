@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { MODULES, COMPONENTS } from './home.imports';
+import { SocialComponent } from './social/social.component';
 
 @NgModule({
   declarations: [
-    COMPONENTS
+    COMPONENTS,
+    SocialComponent
   ],
   imports: [
     MODULES

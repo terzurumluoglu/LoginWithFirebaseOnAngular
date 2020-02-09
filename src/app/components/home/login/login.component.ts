@@ -17,6 +17,11 @@ export class LoginComponent implements OnInit {
   loader: boolean = false;
   alert: boolean = false;
   user: User;
+  socialArr : any[] = [
+    {title : 'Facebook',cssClass : 'circle pointer facebook',icon : 'fab fa-facebook-f',function : () => this.loginWithFacebook()},
+    {title : 'Google',cssClass : 'circle pointer google',icon : 'fab fa-google',function : () => this.loginWithGoogle()},
+    {title : 'GitHub',cssClass : 'circle pointer github',icon : 'fab fa-github',function : () => this.loginWithGithub()},
+  ]
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -28,6 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.socialArr);
   }
 
   go() {
@@ -36,6 +42,30 @@ export class LoginComponent implements OnInit {
 
   getCurrentUser() {
     this.user = this._auth.currentUserValue;
+  }
+
+  loginWithFacebook(){
+    this._auth.facebook().then(p => {
+
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
+  loginWithGoogle(){
+    this._auth.google().then(p => {
+      console.log(p);
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
+  loginWithGithub(){
+    this._auth.github().then(p => {
+      console.log(p);
+    }).catch(err => {
+      console.log(err);
+    })
   }
 
   login(form: FormGroup) {

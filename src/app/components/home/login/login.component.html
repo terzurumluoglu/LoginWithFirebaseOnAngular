@@ -31,6 +31,11 @@
                         </div>
                     </div>
                 </form>
+                <div class="row social">
+                    <div [class]="s?.cssClass" (click)="s?.function" *ngFor="let s of socialArr">
+                        <i [class]="s?.icon"></i>
+                    </div>
+                </div>
             </div>
             <div class="loader">
                 <div *ngIf="alert" [class]="msgData?.cssClass" role="alert">

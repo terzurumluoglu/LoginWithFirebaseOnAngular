@@ -56,6 +56,18 @@ export class AuthService {
     })
   }
 
+  facebook(){
+    return this._firebase.signInWithFacebook();
+  }
+
+  google(){
+    return this._firebase.signInWithGoogle();
+  }
+
+  github(){
+    return this._firebase.signInWithGitHub();
+  }
+
   saveUser(user: User) {
     localStorage.setItem('currentUser', JSON.stringify(user));
     this.currentUserSubject.next(user);

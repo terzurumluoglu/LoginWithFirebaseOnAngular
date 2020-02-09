@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PhoneComponent } from './phone/phone.component';
+import { SocialComponent } from './social/social.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path : 'register',
         component : RegisterComponent
+      },
+      {
+        path : 'socialLogin',
+        component : SocialComponent
       }
     ]
   }
